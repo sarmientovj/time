@@ -1,0 +1,206 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items to the top */
+
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    font-family: Calibri;
+    font-weight: bold;
+    background-color: black;
+}
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-0%);
+
+    width: 850px;
+    margin-top: 0px;
+    padding: 0px;
+    top: 0px;
+    cursor: move;
+    border: 0px solid #ccc;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 0px solid red;
+}
+th, td {
+    /*            padding-top: 0px;*/
+    /*            padding-bottom: 0px;*/
+    /*            padding-left: 0px;*/
+    /*            padding-right: 0px;*/
+    padding: 0px;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    color: white;
+    border: 0px solid blue;
+}
+/*------------------------------------*/
+/*-1º DIV-----------------------------*/
+/*------------------------------------*/
+.head-title{
+    font-size: 40px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+.head-time{
+    font-size: 34px;
+    text-align: center;
+    color: springgreen;
+    line-height: 22px;
+}
+.hh-mm-ss{
+    font-size: 230px;
+    text-align: center;
+    line-height: 173px;
+    color: white;
+}
+.two-points{
+    font-size: 230px;
+    text-align: center;
+    line-height: 173px;
+    color: springgreen;
+}
+/*------------------------------------*/
+/*-2º DIV-----------------------------*/
+/*------------------------------------*/
+.current-end-time-block{
+    font-size: 42px; 
+    display: none;
+    line-height: 28px;
+/*    display: block;*/
+}
+/*------------------------------------*/
+/*-3º DIV-----------------------------*/
+/*------------------------------------*/
+.main-btns{
+    border: 0px;
+    padding: 0px;
+    color: blue;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.main-btns:hover {
+    color: red;
+    block6:hover;
+}
+/*------------------------------------*/
+/*-4º DIV-----------------------------*/
+/*------------------------------------*/
+.data-table{
+    font-size: 50px;
+}
+.data{
+    text-align: left; 
+    color: yellow;
+/*    height: 53px; */
+}
+input {
+    margin: 0px;
+    margin-left: 2px; 
+    padding: 0px; 
+    border: 0px; 
+    height: 53px; 
+    width: 648px; 
+/*    width: 100%; */
+    font-size: 50px; 
+    font-family: 'Calibri'; 
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%; 
+}
+select {
+    margin: 0; 
+    margin-left: 2px; 
+    padding: 0; 
+    border: 0;
+    height: 53px; 
+    width: 75px; 
+    font-size: 50px; 
+    font-family: Calibri; 
+    font-weight: bold;
+    color: white;           
+    background-color: black;
+}
+/*------------------------------------*/
+/*-5º DIV-----------------------------*/
+/*------------------------------------*/
+.author{
+    text-align: right; 
+    font-size: 27px; 
+    color: springgreen; 
+    width: 100%;
+}
+/*------------------------------------*/
+/*-MODAL BOXES------------------------*/
+/*------------------------------------*/
+.draggable {
+    position: absolute;
+    left: 50%;
+    top: 0px; 
+    transform: translate(-50%,-0%);
+    cursor: move;
+}
+.modal { 
+    background-color: skyblue; /*rgb(208,228,254);*/
+    margin: 0px;
+    padding: 5px 0px 10px 20px;
+    border: 2px solid springgreen;
+    font-weight: bold;
+    display: none;
+    resize: both;       
+}
+.button {
+    background-color: forestgreen; /*rgb(76,175,80);*/
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 4px;
+    cursor: pointer;
+    font-size: 18px;
+    position:relative;
+}
+.note-text {
+    font-family: 'Calibri';
+    font-size: 38px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 77px);
+    overflow: auto;
+    resize: none;
+}
+.note-box {
+    padding: 1px;
+    width: 850px;
+    height: 340px;
+    position: absolute;
+    resize: both;
+    overflow: hidden;
+}
+/*------------------------------------*/
+/*------------------------------------*/

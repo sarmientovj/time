@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>😸 TIME ⏰ TIME 😸</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!----------------------------------------------------------------------------------------------->
+    <!--MAIN BOX--------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+    <div id="main_box" class="main-box">
+        <!------------------------------------------------------------------------------------------->
+        <!--1º TABLE--------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------->
+        <table>
+            <tr>
+                <td id="tittle" colspan="5" class="head-title">LA HORA ACTUAL ES</td>
+            </tr>
+            <tr><td colspan="5" style="font-size: 10px">&nbsp;</td></tr>
+            <tr>
+                <td class="head-time">HORAS</td>
+                <td></td>
+                <td class="head-time">MINUTOS</td>
+                <td></td>
+                <td class="head-time">SEGUNDOS</td>
+            </tr>
+            <tr>
+                <td id="hour" class="hh-mm-ss">00</td>
+                <td class="two-points">:</td>
+                <td id="minute" class="hh-mm-ss">00</td>
+                <td class="two-points">:</td>
+                <td id="second" class="hh-mm-ss" style="color: yellow;">00</td>
+            </tr>
+            <tr><td colspan="5" style="font-size: 10px">&nbsp;</td></tr>
+        </table>
+        <!------------------------------------------------------------------------------------------->
+        <!--2º TABLE--------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------->
+        <table id="current_end_time" class="current-end-time-block">
+            <tr>
+                <td id="current_time_label" style="text-align: left; color: transparent;">HORA&nbsp;ACTUAL&nbsp;</td>
+                <td id="current_time" style="text-align: left; color: transparent;">00:00:00</td>
+                <!-- <td style="width: 100%;">&nbsp</td> -->
+                <td id="end_time_label" style="text-align: right; color: transparent; width: 100%;">&nbspHORA&nbsp;DE&nbsp;FIN&nbsp;</td>
+                <td id="end_time" style="text-align: right; color: transparent;">00:00:00</td>
+            </tr>
+            <tr><td colspan="4" style="line-height: 10px;">&nbsp;</td></tr>
+        </table>
+        <!------------------------------------------------------------------------------------------->
+        <!--3º TABLE--------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------->
+        <table>
+            <tr>
+                <td style="text-align: left; width: 100%;">
+                    <button id="toggle_display" class="main-btns" onclick="toggleDisplayTable()">OCULTAR DATOS DE LA EVALUACI&#211;N</button>
+                </td>
+                <td style="text-align: right;">
+                    <button id="notes" class="main-btns" onclick="toggleDisplayModal('note_box')">ANOTACIONES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </td>
+                <td style="text-align: right;">
+                    <button class="main-btns" id="toggle_count" onclick="toggleCount()">REGRESIVO</button>
+                </td>
+                <td style="text-align: right;">
+                    <button class="main-btns" onclick="toggleDisplayModal('help_box')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AYUDA</button>
+                </td>
+            </tr>
+            <!-- <tr><td colspan="4" style="font-size: 10px">&nbsp;</td></tr> -->
+        </table>
+        <!------------------------------------------------------------------------------------------->
+        <!--4º TABLE--------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------->
+        <table id="data_table" class="data-table">
+            <tr>
+                <td class="data">Curso</td>
+                <td class="data" colspan="3">
+                    <input id="course" placeholder="Historia del Arte">
+                </td>
+            </tr>
+            <!-- <tr style="line-height: 53px;"> -->
+            <tr>
+                <td class="data" style="width:190px">Profesor&nbsp;&nbsp;</td>
+                <td class="data" colspan="3">
+                    <input id="teacher" placeholder="Juan Pérez">
+                </td>
+            </tr>
+            <tr>
+                <td class="data">Horario</td>
+                <td class="data" colspan="3">
+                    <input id="commission" placeholder="0123">
+                </td>
+            </tr>
+            <!-- <tr style="line-height: 53px;"> -->
+            <tr>
+                <td class="data">Fecha</td>
+                <td id="full_date" class="data" colspan="2" style="color: white; width: 100%;"></td>
+                <td id="date" class="data" style="text-align: right;"></td>
+            </tr>
+            <tr>
+                <td class="data">Inicio</td>
+                <td class="form-group">
+                    <select id="hour_start"></select>
+                    <label style="color:springgreen;">:</label>
+                    <select id="minute_start"></select>
+                    <label style="color:springgreen;">:&nbsp;</label>
+                    <label>00</label>
+                </td>
+                
+                <td class="data" style="text-align: right;">Clave</td>
+                <td style="text-align: right;">
+                    <input id="clave" style="text-align: right; width: 188px; margin-right: 2px;" placeholder="HIS145">
+                </td>
+            </tr>
+            <!-- <tr style="line-height: 53px;"> -->
+            <tr>
+                <td class="data">T&#233;rmino</td>
+                <td class="form-group">
+                    <select id="hour_end" onchange="onChange()"></select>
+                    <label style="color:springgreen;">:</label>
+                    <select id="minute_end" onchange="onChange()"></select>
+                    <label style="color:springgreen;">:&nbsp;</label>
+                    <label>00</label>
+                </td>
+
+                <td class="data" style="text-align: right;">Aula</td>
+                <td style="text-align: right;">
+                    <input id="classroom" style="text-align: right; width: 188px; margin-right: 2px;" placeholder="L101">
+                </td>
+            </tr>
+            <!-- <tr><td colspan="4" style="font-size: 10px">&nbsp;</td></tr> -->
+        </table>
+        <!------------------------------------------------------------------------------------------->
+        <!--5º TABLE--------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------->
+        <table>
+            <tr>
+<!--                <td style="text-align: left;">-->
+<!--                    <button id="notes" style="padding-top: 8px;" class="main-btns" onclick="toggleDisplayModal('note_box')">ANOTACIONES</button>-->
+<!--                </td>-->
+                <td class="author">Valentin Sarmiento ( sarmiento.vj@pucp.edu.pe )</td>
+            </tr>
+        </table>
+    </div>
+    <!----------------------------------------------------------------------------------------------->
+    <!--END MAIN BOX--------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+
+    <!----------------------------------------------------------------------------------------------->
+    <!--HELP MODAL----------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+    <div id="help_box" class="draggable modal">
+        <table style="width: 320px;">
+            <col width="120px">
+            <tr style="font-size: 10px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">F11<br><br></td>
+                <td style="color: black; vertical-align: middle;">Entrar Pantalla Completa,<br>Salir Pantalla Completa.</td>
+            </tr>
+            <tr style="font-size: 10px;"><td colspan="5">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">CTRL&nbsp;&nbsp;<b style="font-size: 20px">+</b></td>
+                <td style="color: black;">Aumentar Tama&ntilde;o de la<br>Pantalla.</td>
+            </tr>
+            <tr style="font-size: 10px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">CTRL&nbsp;&nbsp;<b style="font-size: 30px">-</b></td>
+                <td style="color: black;">Disminur Tama&ntilde;o de la<br>Pantalla.</td>
+            </tr>
+            <tr style="font-size: 10px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">CTRL&nbsp;&nbsp;0 (cero)</td>
+                <td style="color: black;">Tama&ntilde;o Original de la<br>Pantalla.</td>
+            </tr>
+            <tr style="font-size: 10px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">CTRL&nbsp;&nbsp;R</td>
+                <td style="color: black;">Volver a Cargar la Pantalla.</td>
+            </tr>
+            <tr style="font-size: 10px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td style="color: blue;">PULSAR,<br>ARRASTRAR Y<br>SOLTAR</td>
+                <td style="color: black;">Con esta acci&oacute;n Ud podr&aacute;<br>mover el cuadro que<br>muestra el tiempo a<br>cualquier posici&oacute;n de la<br>pantalla.</td>
+            </tr>
+            <tr style="font-size: 12px;"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button class="button" onclick="document.getElementById('help_box').style.display='none'">Cerrar&nbsp;&nbsp;❌</button>
+                </td>
+            </tr>
+            <tr style="font-size: 5px;"><td colspan="2">&nbsp;</td></tr>
+        </table>
+    </div>
+
+    <!----------------------------------------------------------------------------------------------->
+    <!--NOTES MODAL---------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+    <div id="note_box" class="draggable modal note-box" style="top: 285px;">
+        <textarea id="note_text" class="note-text" placeholder="Escribe tus anotaciones aqu&iacute; ..."></textarea>               
+        <table id="note_footer" style="width: 100%;">
+            <tr style="font-size: 3px;"><td>&nbsp;</td></tr>
+            <tr>
+                <td style="text-align: right;">
+                    <button class="button" style="background-color: royalblue;" onclick="changeFontSize('increase')">Font Size&nbsp;&nbsp;👍</button>
+                </td>
+                <td style="text-align: center;">
+                    <button class="button" style="background-color: royalblue;" onclick="changeFontSize('decrease')">Font Size&nbsp;&nbsp;👎</b></button>
+                </td>
+                <td style="text-align: left;">
+                    <button class="button" onclick="document.getElementById('note_box').style.display='none'">&nbsp;&nbsp;&nbsp;&nbsp;Cerrar&nbsp;&nbsp;❌&nbsp;</button>
+                </td>
+            </tr>
+            <tr style="font-size: 5px;"><td>&nbsp;</td></tr>
+        </table>
+    </div>
+
+    <!----------------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+    <script src="scripts.js"></script>
+    <script src="draggables.js"></script>
+</body>
+</html>
